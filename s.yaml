@@ -1,0 +1,37 @@
+
+edition: 1.0.0
+name: ohyee-test-nodejs-runtime
+
+vars: # 全局变量
+
+services:
+  ohyee-test-nodejs-runtime: 
+    component: func1
+    props:
+      region: "cn-hangzhou"
+      service:
+        name: "hello-world-service"
+        description: 'hello world by serverless devs'
+      function:
+        name: "start-fc-http-nodejs14"
+        description: 'hello world by serverless devs'
+        runtime: nodejs14
+        codeUri: ./build
+        handler: index.handler
+        memorySize: 128
+        timeout: 60
+      triggers:
+        - name: httpTrigger
+          type: http
+          config:
+            authType: anonymous
+            methods:
+              - GET
+      customDomains:
+        - domainName: auto
+          protocol: HTTP
+          routeConfigs:
+            - path: /*
+              methods:
+                - GET
+                - POST
