@@ -6,7 +6,7 @@ vars: # 全局变量
 
 services:
   ohyee-test-nodejs-runtime: 
-    component: func1
+    component: fc
     props:
       region: "cn-hangzhou"
       service:
