@@ -3,7 +3,7 @@ var getFormBody = require('body/form');
 var body = require('body');
 
 const BUILD_TIME = '{BUILD_TIME}';
-const VERSION = '1.0.27'; 
+const VERSION = '1.0.28'; 
 
 exports.handler = (req, resp, context) => {
   console.log('hello world');
